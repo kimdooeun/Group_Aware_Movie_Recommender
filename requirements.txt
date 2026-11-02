@@ -1,0 +1,11 @@
+# Group-Aware Movie Recommender - shared Python dependencies
+# Recommended Python: 3.11 (use the same Python version across the team)
+# A: preprocessing/EDA | B: collaborative filtering | C: content-based | D: evaluation
+
+numpy==1.26.4
+pandas==2.2.3
+matplotlib==3.9.2
+scikit-learn==1.5.2
+
+# B only: uncomment this line if Matrix Factorization uses Surprise SVD.
+# scikit-surprise==1.1.5
