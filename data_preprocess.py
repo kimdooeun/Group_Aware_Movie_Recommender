@@ -1,16 +1,3 @@
-# -*- coding: utf-8 -*-
-"""Group-Aware Movie Recommender - A 담당 데이터 전처리/EDA.
-
-Anaconda/일반 Python에서 실행: python data_process_anaconda.py
-선택: python data_process_anaconda.py --no-show  (그래프 창 표시 없이 PNG만 저장)
-
-준비할 파일 (이 스크립트와 같은 폴더):
-  - tmdb_5000_movies.csv 또는 이 파일이 들어 있는 ZIP 파일
-  - ml-1m/ratings.dat, ml-1m/movies.dat (없으면 ml-1m.zip에서 추출하거나 공식 사이트에서 다운로드)
-
-결과 파일은 같은 폴더의 results/에 저장됩니다.
-"""
-
 from __future__ import annotations
 
 import argparse
