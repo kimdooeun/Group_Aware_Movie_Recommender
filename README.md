@@ -1,0 +1,2 @@
+# Group_Aware_Movie_Recommender
+Group movie recommendation
