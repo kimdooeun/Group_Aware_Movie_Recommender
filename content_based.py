@@ -213,31 +213,3 @@ if __name__ == "__main__":
     print("\n[CSV 생성 완료]")
     print("총 데이터 수:", len(group_scores))
     print(group_scores.head())
-
-# 테스트할 그룹 사용자
-group_users = [1, 2, 3]
-
-# 모든 영화에 대한 개인별 추천 점수 생성
-group_scores = pd.concat(
-    [
-        score_user(
-            user_id=user_id,
-            movie_ids=None,
-            exclude_seen=False,
-            top_n=None
-        )
-        for user_id in group_users
-    ],
-    ignore_index=True
-)
-
-# 결과 저장
-OUTPUT_DIR = BASE_DIR / "results"
-OUTPUT_DIR.mkdir(exist_ok=True)
-
-output_path = OUTPUT_DIR / "content_group_scores.csv"
-
-group_scores.to_csv(output_path, index=False)
-
-print("총 데이터 수:", len(group_scores))
-print(group_scores.head())
