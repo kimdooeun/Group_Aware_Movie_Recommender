@@ -17,7 +17,7 @@ Group movie recommendation
 - TMDB 5000
 - Amazon Reviews 2023 (외부 테스트)
 
-## Collaborative Filtering: Matrix Factorization (B)
+## Collaborative Filtering: Matrix Factorization
 
 SGD로 학습하는 bias MF를 NumPy로 직접 구현했습니다. (라이브러리 호출 없음)
 
@@ -63,7 +63,7 @@ python run_mf.py export   # 전체 사용자 x 영화 점수 -> results/mf_score
 - 학습 RMSE 0.7395 → 평가 0.8553: 약한 과적합이 있으나 평가 오차는 20 epoch까지 계속 감소
 - Python 3.8(numpy 1.24, pandas 2.0)과 Python 3.11(`requirements.txt` 고정 버전)에서 결과 동일
 
-### Output for Group Recommendation (D)
+### Output for Group Recommendation
 `results/mf_scores.csv`: `userId, movieId, score` (21,427,007행, 약 373MB)
 
 - 6,040명 × 3,680편 전체 후보의 예상 평점(1~5). 학습 데이터에서 이미 평가한 조합은 제외
