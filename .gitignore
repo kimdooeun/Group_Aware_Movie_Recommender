@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# MF output too large for GitHub (373MB); hand over to D directly
+results/mf_scores.csv
