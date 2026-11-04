@@ -221,3 +221,9 @@ __marimo__/
 
 # MF output too large for GitHub (373MB); hand over to D directly
 results/mf_scores.csv
+
+# macOS system files
+.DS_Store
+
+# PyCharm
+.idea/
