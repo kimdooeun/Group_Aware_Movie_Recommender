@@ -13,7 +13,8 @@ import pandas as pd
 
 from mf import MatrixFactorization, load_ratings
 
-RESULTS = "results"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+RESULTS = os.path.join(BASE_DIR, "results")  # preprocessed CSVs and MF outputs
 BEST_PARAMS = os.path.join(RESULTS, "mf_best_params.json")
 GRID = {
     "k": [20, 50],
@@ -29,7 +30,7 @@ def split_validation(train, frac=0.1, seed=42):
 
 
 def tune():
-    train = load_ratings("ratings_train.csv")
+    train = load_ratings(os.path.join(RESULTS, "ratings_train.csv"))
     sub_train, val = split_validation(train)  # test_eval is never used for tuning
     rows = []
     for k, lr, reg in itertools.product(GRID["k"], GRID["lr"], GRID["reg"]):
@@ -54,8 +55,8 @@ def tune():
 def final():
     with open(BEST_PARAMS) as f:
         p = json.load(f)
-    train = load_ratings("ratings_train.csv")
-    test = load_ratings("ratings_test_eval.csv")
+    train = load_ratings(os.path.join(RESULTS, "ratings_train.csv"))
+    test = load_ratings(os.path.join(RESULTS, "ratings_test_eval.csv"))
     model = MatrixFactorization(**p)
     hist = model.fit(train, test)
     os.makedirs(RESULTS, exist_ok=True)

@@ -10,8 +10,8 @@ import numpy as np
 BASE_DIR = Path(__file__).resolve().parent
 
 #데이터 파일 경로
-MOVIES_PATH = BASE_DIR / "data" / "movies_processed.csv"
-RATINGS_PATH = BASE_DIR / "data" / "ratings_train.csv"
+MOVIES_PATH = BASE_DIR / "results" / "movies_processed.csv"
+RATINGS_PATH = BASE_DIR / "results" / "ratings_train.csv"
 
 #CSV 파일 불러오기
 movies = pd.read_csv(MOVIES_PATH)
