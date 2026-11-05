@@ -1,0 +1,19 @@
+{
+  "data_dir": "results\\amazon",
+  "groups_file": "results\\amazon\\knn_baseline\\group_eval_groups.csv",
+  "n_requested_groups": 4000,
+  "n_evaluated_groups": 3951,
+  "skipped_groups": 49,
+  "k": 10,
+  "threshold": 4.0,
+  "tie_seeds": 5,
+  "candidate_file": null,
+  "tfidf_max_features": 10000,
+  "mf": {
+    "k": 50,
+    "lr": 0.01,
+    "reg": 0.05,
+    "epochs": 20
+  },
+  "notes": "MF fitted only with Amazon TRAIN. TF-IDF and user profiles built from Amazon metadata and TRAIN."
+}
