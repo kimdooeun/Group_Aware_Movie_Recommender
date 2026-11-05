@@ -1,0 +1,72 @@
+[
+  {
+    "case": 1,
+    "label": "Near-average group",
+    "rule": "closest to the average (MF, content-based) P@10 pair",
+    "group_id": 1004,
+    "members": [
+      2940,
+      3832,
+      5121
+    ],
+    "graded": [
+      true,
+      true,
+      true
+    ],
+    "mf_p_members": [
+      0.0,
+      0.0,
+      0.1
+    ],
+    "content_p_members": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "case": 2,
+    "label": "Largest MF win",
+    "rule": "largest P@10 gap in MF's favour",
+    "group_id": 90,
+    "members": [
+      1383,
+      4005
+    ],
+    "graded": [
+      true,
+      true
+    ],
+    "mf_p_members": [
+      0.4,
+      0.2
+    ],
+    "content_p_members": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "case": 3,
+    "label": "Largest content-based win",
+    "rule": "largest P@10 gap in content-based's favour",
+    "group_id": 406,
+    "members": [
+      2425,
+      2888
+    ],
+    "graded": [
+      true,
+      true
+    ],
+    "mf_p_members": [
+      0.0,
+      0.0
+    ],
+    "content_p_members": [
+      0.0,
+      0.4
+    ]
+  }
+]

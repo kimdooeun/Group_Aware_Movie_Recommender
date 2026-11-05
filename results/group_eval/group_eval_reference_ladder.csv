@@ -1,0 +1,8 @@
+list,p_mean
+Upper bound (best possible shared list),0.3536745833333333
+Popularity (most-rated movies),0.10733875000000001
+"Item mean rating, shrunk (no personalisation)",0.0427316666666666
+MF,0.03322
+MF biases only (no latent part),0.0273041666666666
+Content-based,0.007686249999999999
+Random,0.004439394433970651

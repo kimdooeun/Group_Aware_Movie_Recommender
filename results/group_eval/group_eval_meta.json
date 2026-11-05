@@ -1,0 +1,13 @@
+{
+  "seed": 42,
+  "groups_per_size": 1000,
+  "k": 10,
+  "rel_threshold": 4,
+  "tie_seeds": 5,
+  "candidate_movies": 3680,
+  "mf_test_rmse_from_scores_file": 0.855259187881556,
+  "content_reproduces_team_output": true,
+  "members": 14000,
+  "members_excluded": 63,
+  "groups_skipped": 0
+}
