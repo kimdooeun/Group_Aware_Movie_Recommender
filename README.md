@@ -121,3 +121,42 @@ scores = score_user(
 
 - 반환 형식: `userId, movieId, score`
 - `score`는 예상 평점이 아닌 코사인 유사도 점수(-1~1)입니다.
+
+## Group Evaluation
+
+두 모델(MF, 콘텐츠 기반)을 **수정하지 않고** 무작위 가상 그룹(2~5명) 4,000개로 그룹 단위 추천을 평가했습니다. 구성원별 점수를 Average 또는 Least Misery로 합쳐 그룹 Top-10을 만들고, 각 구성원이 테스트에서 4점 이상 준 영화로 채점합니다.
+
+**📄 평가 보고서: [`results/group_eval/group_eval_report.md`](results/group_eval/group_eval_report.md)**
+평가 방법, 결과, 점수 해석(왜 낮은지, 그래도 의미 있는 이유), 예상 질문, 한계를 정리한 문서입니다. 그림은 `results/group_eval/figures/`에 있습니다.
+
+### Summary
+| 목록 (그룹 P@10, Average) | 값 |
+|---|---|
+| 무작위 | 0.0044 |
+| 콘텐츠 기반 | 0.0077 |
+| **MF** | **0.0332** |
+| 인기도순 (평점 개수 순, 개인화 없음) | 0.1073 |
+
+- 이 평가에서 MF가 콘텐츠 기반보다 일관되게 앞섭니다. 같은 그룹끼리 비교하면 MF가 이긴 그룹 54%, 진 그룹 8%입니다.
+- 절대 성능은 낮고 두 모델 모두 인기도순보다 낮습니다. MF 목록은 영화 편향 같은 비개인화 성분에 크게 의존합니다.
+- Least Misery는 Average보다 나은 점이 없었습니다. 자세한 해석과 주장할 수 없는 것은 보고서를 참고하세요.
+
+### Files
+| 파일 | 설명 |
+|---|---|
+| `eval_group.py` | 그룹 평가 (그룹 생성, 그룹 점수, 구성원별 채점) |
+| `eval_group_report.py` | 기준점(무작위, 인기도, 상한), 개인 추천 비교, 응집도 분석, 그림 |
+| `eval_group_diagnostics.py` | 목록 다양성, 인기도를 맞춘 비교, seed 반복 |
+| `eval_group_diag_mf.py` | MF 점수 분해(편향/잠재요인). MF를 같은 설정으로 재학습 |
+| `results/group_eval/` | 보고서, 분석 CSV, 그림 |
+
+### Usage
+```
+python eval_group.py --mf-scores /path/to/mf_scores.csv
+python eval_group_report.py --mf-scores /path/to/mf_scores.csv
+python eval_group_diagnostics.py --mf-scores /path/to/mf_scores.csv
+python eval_group_diag_mf.py --mf-scores /path/to/mf_scores.csv    # 재학습으로 수 분 걸립니다
+```
+
+- 위 순서로 실행하면 `results/group_eval/`의 결과가 다시 만들어집니다. scikit-learn이 설치된 환경에서 실행하세요.
+- `mf_scores.csv`는 용량 때문에 git에 없습니다. `python run_mf.py export`로 만들거나 직접 전달받으세요.

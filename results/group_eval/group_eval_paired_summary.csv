@@ -1,0 +1,11 @@
+agg,size,mf_better_pct,tie_pct,content_better_pct
+average,All,53.925,37.75,8.325000000000001
+average,5,56.39999999999999,34.1,9.5
+average,4,55.50000000000001,36.4,8.1
+average,3,55.60000000000001,38.1,6.3
+average,2,48.199999999999996,42.4,9.4
+least_misery,All,51.300000000000004,40.400000000000006,8.3
+least_misery,5,50.5,39.6,9.9
+least_misery,4,54.1,36.9,9.0
+least_misery,3,52.1,41.8,6.1
+least_misery,2,48.5,43.3,8.200000000000001
