@@ -1,0 +1,6 @@
+system,distinct_movies,top_movie,top_movie_share,mean_overlap_random_pairs,average_vs_least_misery_overlap
+popularity,201,Back to the Future (1985),0.261,1.7166,
+mf_average,258,Sanjuro (1962),0.94475,4.5156,6.4945
+mf_least_misery,451,Sanjuro (1962),0.856,2.9524,
+content_average,882,Big Bully (1996),0.37225,1.3986,2.95525
+content_least_misery,1221,Faster Pussycat! Kill! Kill! (1965),0.16225,0.5412,
